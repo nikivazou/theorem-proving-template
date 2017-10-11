@@ -11,7 +11,7 @@ extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     Misc
+  exposed-modules:     Data.Misc
                        Data.List.List
                        Theorems
   build-depends:       base >=4.9 && <4.10, liquidhaskell >=0.8 && <0.9

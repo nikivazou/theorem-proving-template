@@ -8,9 +8,9 @@ module Theorems where
 import Prelude hiding (length, map, (++))
 
 import Data.List.List 
+-- NV TODO: the infix annotation is not imported by the above module
 {-@ infix   ++ @-}
-
-import Misc 
+import Data.Misc 
 
 import Language.Haskell.Liquid.ProofCombinators 
 

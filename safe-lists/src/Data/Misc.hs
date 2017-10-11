@@ -1,6 +1,6 @@
 {-@ LIQUID "--higherorder"    @-}
 
-module Misc where
+module Data.Misc where
 
 {-@ infix   o @-}
 {-@ reflect o @-}
