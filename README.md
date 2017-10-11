@@ -3,9 +3,9 @@ This is a template repo for structuring Liquid Haskell proofs.
 # Listing of files in `src`:
 
 - `Main.hs` contains your main code that uses user-defined lists,
-- `Data/List/List.hs` contains the definition of the list data type,
-- `Theorems.hs` contains some theorems that lists satisfy, and
-- `Misc.hs` contains helper functions.
+- `Data/List.hs` contains the definition of the list data type,
+- `Data/Misc.hs` contains helper functions, and
+- `Theorems/List.hs` contains some theorems that lists satisfy.
 
 
 # Checkin your code 
@@ -30,8 +30,8 @@ Or type the following commands on your terminal. **Attention** the ordering of t
 
 ```
 cd src
-stack exec -- liquid Misc.hs
-stack exec -- liquid List.hs
-stack exec -- liquid Theorems.hs
+stack exec -- liquid Data/Misc.hs
+stack exec -- liquid Data/List.hs
+stack exec -- liquid Theorems/List.hs
 stack exec -- liquid Main.hs
 ```

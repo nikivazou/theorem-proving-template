@@ -3,7 +3,7 @@
 
 module Main where
 
-import Data.List.List 
+import Data.List 
 import Prelude hiding (length, map, (++))
 
 main :: IO ()

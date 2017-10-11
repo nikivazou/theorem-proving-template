@@ -3,11 +3,11 @@
 
 {-@ LIQUID "--automatic-instances=liquidinstanceslocal" @-}
 
-module Theorems where 
+module Theorems.List where 
 
 import Prelude hiding (length, map, (++))
 
-import Data.List.List 
+import Data.List 
 -- NV TODO: the infix annotation is not imported by the above module
 {-@ infix   ++ @-}
 import Data.Misc 

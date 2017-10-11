@@ -12,8 +12,8 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Data.Misc
-                       Data.List.List
-                       Theorems
+                       Data.List
+                       Theorems.List
   build-depends:       base >=4.9 && <4.10, liquidhaskell >=0.8 && <0.9
   hs-source-dirs:      src
   -- ghc-options:         -W -Werror
