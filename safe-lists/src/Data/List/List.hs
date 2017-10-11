@@ -3,7 +3,7 @@
 
 {-@ LIQUID "--automatic-instances=liquidinstances" @-}
 
-module List where 
+module Data.List.List where 
 
 import Prelude hiding (length, map, (++))
 

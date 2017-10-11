@@ -12,7 +12,7 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Misc
-                       List
+                       Data.List.List
                        Theorems
   build-depends:       base >=4.9 && <4.10, liquidhaskell >=0.8 && <0.9
   hs-source-dirs:      src

@@ -16,7 +16,7 @@ runAllLiquid = mconcat <$> mapM runLiquid orderedSrcFiles
 orderedSrcFiles :: [String]
 orderedSrcFiles = [
     "Misc.hs"
-  , "List.hs"
+  , "Data.List.List.hs"
   , "Theorems.hs"
   , "Main.hs"
   ]

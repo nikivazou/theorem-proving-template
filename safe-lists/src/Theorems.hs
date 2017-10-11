@@ -7,7 +7,7 @@ module Theorems where
 
 import Prelude hiding (length, map, (++))
 
-import List 
+import Data.List.List 
 {-@ infix   ++ @-}
 
 import Misc 
