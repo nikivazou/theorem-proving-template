@@ -2,13 +2,13 @@ This is a template repo for structuring and checking Liquid Haskell proofs.
 
 # GOAL: Safe map fusion
 
-Haskell's rewrite rules can be use to speed-up your code, eg [map-fusion](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L72):
+Haskell's rewrite rules can be use to speed-up your code, e.g., [map-fusion](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L72):
 
 ```
 {-# RULES "mapFusion" forall f g xs.  map f (map g xs) = map (f ^ g) xs #-}
 ```
 
-Liquid Haskell can now prove such rules safe, e.g. with [this](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L67-L68):
+Liquid Haskell can now prove such rules safe, e.g., with [this](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L67-L68):
 
 ```
 {-@ mapFusion :: f:_ -> g:_ -> xs:_ 
