@@ -10,7 +10,7 @@ This is a template repo for structuring Liquid Haskell proofs.
 
 # Checkin your code 
 
-## With `Travis CI`.
+## With `Travis CI`
 
 Your code is automatically checked with Travis at each commit because of [.travis.yml](https://github.com/nikivazou/theorem-proving-template/blob/master/.travis.yml)
 
@@ -24,7 +24,7 @@ stack install
 stack test safe-lists
 ```
 
-## Locally. 
+## Locally
 
 Or type the following commands on your terminal. **Attention** the ordering of the commands should follow the ordering of your imports.
 
