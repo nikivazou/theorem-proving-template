@@ -17,6 +17,8 @@ before_install:
   # Install Z3
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:hvr/z3 -y > /dev/null; sudo apt-key -qq update /dev/null; sudo apt-get -qq update; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq install z3 -y --force-yes; fi
+  - cd src/
+
 
 addons:
   apt:
@@ -26,6 +28,5 @@ addons:
     - ghc-8.0.2
 
 script:
-  - cd src/
   - stack build 
   - stack --skip-ghc-check test safe-lists
