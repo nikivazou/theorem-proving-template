@@ -24,7 +24,7 @@ stack install
 stack test safe-lists
 ```
 
-## Locally
+## Check each file
 
 Or type the following commands on your terminal. **Attention** the ordering of the commands should follow the ordering of your imports.
 
@@ -35,3 +35,6 @@ stack exec -- liquid Data/List.hs
 stack exec -- liquid Theorems/List.hs
 stack exec -- liquid Main.hs
 ```
+
+
+For example, if you update `Data/List.hs` and you want to check your theorems, you need to run `liquid Data/List.hs` before you run `liquid Theorems/List.hs`.
