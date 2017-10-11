@@ -1,0 +1,20 @@
+resolver: lts-8.9
+
+packages:
+- './'
+
+extra-deps:
+- liquid-fixpoint-0.7.0.5
+- liquidhaskell-0.8.0.5
+- aeson-0.11.3.0
+- csv-table-0.1.0.1
+- dotgen-0.4.2
+- fgl-visualize-0.1.0.1
+- intern-0.9.1.4
+- located-base-0.1.1.0
+
+flags:
+  liquidhaskell:
+    devel: true
+
+extra-package-dbs: []
