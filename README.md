@@ -3,7 +3,7 @@ This is a template repo for structuring Liquid Haskell proofs.
 # Listing of files in `src`:
 
 - `Main.hs` contains your main code that uses user-defined lists,
-- `Lists.hs` contains the definition of the list data type,
+- `Data/List/List.hs` contains the definition of the list data type,
 - `Theorems.hs` contains some theorems that lists satisfy, and
 - `Misc.hs` contains helper functions.
 
