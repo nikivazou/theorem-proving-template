@@ -15,6 +15,7 @@ import Data.Misc
 import Language.Haskell.Liquid.ProofCombinators 
 
 
+-- Explicit, paper and pencil proof. 
 appendNilId     :: L a -> Proof
 {-@ appendNilId ::  xs:_ -> { xs ++ N = xs } @-}
 appendNilId N        
@@ -28,6 +29,7 @@ appendNilId (C x xs)
    *** QED 
 
 
+-- proofs automated by automatic-instances
 {-@ automatic-instances appendAssoc @-}
 appendAssoc :: L a -> L a -> L a -> Proof
 {-@ appendAssoc :: xs:_ -> ys:_ -> zs:_ 
@@ -39,6 +41,6 @@ appendAssoc (C _ xs) ys zs = appendAssoc xs ys zs
 {-@ automatic-instances mapFusion @-}
 mapFusion :: (a -> b) -> (b -> c) -> L a -> Proof
 {-@ mapFusion :: f:_ -> g:_ -> xs:_ 
-              -> { map (f o g) xs = map (f o g) xs } @-}
+              -> { map (f o g) xs = map f (map g xs) } @-}
 mapFusion _ _ N        = trivial 
 mapFusion f g (C _ xs) = mapFusion f g xs 
