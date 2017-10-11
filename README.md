@@ -16,7 +16,7 @@ Liquid Haskell can now prove such rules safe, e.g., with [this](https://github.c
 ``` 
 
 Does this proof impose extra run-time overhead? No! 
-Because of an other rewrite [rule](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L79): 
+Because of another rewrite [rule](https://github.com/nikivazou/theorem-proving-template/blob/54e8dfa32519c5a57c5c776b426a4af53bdcbb45/safe-lists/src/Theorems/List.hs#L79): 
 
 ```
 {-# RULES "mapFusion/runtime"  forall f g xs. mapFusion f g xs = () #-}
