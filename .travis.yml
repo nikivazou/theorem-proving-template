@@ -1,0 +1,31 @@
+sudo: required
+
+cache:
+  directories:
+    - $HOME/.stack
+
+before_install:
+  # Download and unpack the stack executable
+  - mkdir -p ${HOME}/.local/bin
+  - export PATH=${HOME}/.local/bin:${PATH}
+  - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ${HOME}/.local/bin '*/stack'
+  - stack --version
+  - stack setup
+  - export PATH=/opt/ghc/7.10.3/bin:$PATH
+
+
+  # Install Z3
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:hvr/z3 -y > /dev/null; sudo apt-key -qq update /dev/null; sudo apt-get -qq update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq install z3 -y --force-yes; fi
+
+addons:
+  apt:
+    sources:
+    - hvr-ghc
+    packages:
+    - ghc-8.0.2
+
+script:
+  - cd src/
+  - stack build 
+  - stack --skip-ghc-check test safe-lists
