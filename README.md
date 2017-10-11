@@ -8,7 +8,7 @@ This is a template repo for structuring Liquid Haskell proofs.
 - `Theorems/List.hs` contains some theorems that lists satisfy.
 
 
-# Checkin your code 
+# Checking your code 
 
 ## With `Travis CI`
 
