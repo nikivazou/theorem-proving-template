@@ -65,11 +65,11 @@ appendAssoc (C _ xs) ys zs = appendAssoc xs ys zs
 -- | After you actually prove mapFusion, 
 
 {-@ mapFusion :: f:_ -> g:_ -> xs:_ 
-              -> { map (f ^ g) xs = map f (map g xs) } @-}
+              -> { map f (map g xs) = map (f ^ g) xs } @-}
 
 -- | you can use it to optimize your code
 
-{-# RULES "mapFusion" forall f g xs.  map f (map g xs) = map (f ^ g) xs #-}
+{-# RULES "mapFusion/apply" forall f g xs.  map f (map g xs) = map (f ^ g) xs #-}
 
 {-@ automatic-instances mapFusion @-}
 mapFusion :: (b -> c) -> (a -> b) -> L a -> Proof
