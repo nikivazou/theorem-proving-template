@@ -15,8 +15,11 @@ import Data.Misc
 
 import Language.Haskell.Liquid.ProofCombinators 
 
+-------------------------------------------------------------------------------
+-- | Explicit, paper and pencil proofs ----------------------------------------
+-------------------------------------------------------------------------------
 
--- Explicit, paper and pencil proof. 
+-- | Left Identity
 appendNilId     :: L a -> Proof
 {-@ appendNilId ::  xs:_ -> { xs ++ N = xs } @-}
 appendNilId N        
@@ -29,8 +32,20 @@ appendNilId (C x xs)
    ==. C x xs        ? appendNilId xs 
    *** QED 
 
+-- | Ignore the proof at runtime: 
+-- | appendNilId is a theorem that could be used to prove properties in your code
+-- | appendNilId is also an expensive recursive function. 
+-- | At runtime appendNilId always provably returns the Haskell value (), 
+-- | so no need to recurse at runtime 
 
--- proofs automated by automatic-instances
+{-# RULES "appendNilId/runtime"  forall xs. appendNilId xs = () #-}
+{-# NOINLINE  appendNilId #-}
+
+-------------------------------------------------------------------------------
+-- | Automatic Proofs ---------------------------------------------------------
+-------------------------------------------------------------------------------
+
+-- | Associativity proofs automated by automatic-instances
 {-@ automatic-instances appendAssoc @-}
 appendAssoc :: L a -> L a -> L a -> Proof
 {-@ appendAssoc :: xs:_ -> ys:_ -> zs:_ 
@@ -38,10 +53,28 @@ appendAssoc :: L a -> L a -> L a -> Proof
 appendAssoc N _ _          = trivial
 appendAssoc (C _ xs) ys zs = appendAssoc xs ys zs
 
+{-# RULES "appendNilId/runtime"  forall xs ys zs. appendAssoc xs ys zs = () #-}
+{-# NOINLINE  appendAssoc #-}
+
+
+-------------------------------------------------------------------------------
+-- | Use proofs for efficiency ------------------------------------------------
+-------------------------------------------------------------------------------
+
+-- | Map Fusion
+-- | After you actually prove mapFusion, 
+
+{-@ mapFusion :: f:_ -> g:_ -> xs:_ 
+              -> { map (f ^ g) xs = map f (map g xs) } @-}
+
+-- | you can use it to optimize your code
+
+{-# RULES "mapFusion" forall f g xs.  map f (map g xs) = map (f ^ g) xs #-}
 
 {-@ automatic-instances mapFusion @-}
 mapFusion :: (b -> c) -> (a -> b) -> L a -> Proof
-{-@ mapFusion :: f:_ -> g:_ -> xs:_ 
-              -> { map (f ^ g) xs = map f (map g xs) } @-}
 mapFusion _ _ N        = trivial 
 mapFusion f g (C _ xs) = mapFusion f g xs 
+
+{-# RULES "mapFusion/runtime"  forall f g xs. mapFusion f g xs = () #-}
+{-# NOINLINE  mapFusion #-}
