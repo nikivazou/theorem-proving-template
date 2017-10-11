@@ -1,3 +1,6 @@
+{-@ LIQUID "--higherorder"    @-}
+{-@ LIQUID "--exact-data-con" @-}
+
 module Main where
 
 import List 
