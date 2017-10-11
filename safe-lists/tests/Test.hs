@@ -17,7 +17,7 @@ orderedSrcFiles :: [String]
 orderedSrcFiles = [
     "Data/Misc.hs"
   , "Data/List.hs"
-  , "Theorems.hs"
+  , "Theorems/List.hs"
   , "Main.hs"
   ]
 

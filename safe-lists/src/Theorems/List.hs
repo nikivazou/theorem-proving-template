@@ -5,11 +5,12 @@
 
 module Theorems.List where 
 
-import Prelude hiding (length, map, (++))
+import Prelude hiding (length, map, (++), (^))
 
 import Data.List 
 -- NV TODO: the infix annotation is not imported by the above module
 {-@ infix   ++ @-}
+{-@ infix   ^  @-}
 import Data.Misc 
 
 import Language.Haskell.Liquid.ProofCombinators 
@@ -39,8 +40,8 @@ appendAssoc (C _ xs) ys zs = appendAssoc xs ys zs
 
 
 {-@ automatic-instances mapFusion @-}
-mapFusion :: (a -> b) -> (b -> c) -> L a -> Proof
+mapFusion :: (b -> c) -> (a -> b) -> L a -> Proof
 {-@ mapFusion :: f:_ -> g:_ -> xs:_ 
-              -> { map (f o g) xs = map f (map g xs) } @-}
+              -> { map (f ^ g) xs = map f (map g xs) } @-}
 mapFusion _ _ N        = trivial 
 mapFusion f g (C _ xs) = mapFusion f g xs 

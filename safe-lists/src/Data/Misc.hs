@@ -2,6 +2,9 @@
 
 module Data.Misc where
 
-{-@ infix   o @-}
-{-@ reflect o @-}
-o f g x = f (g x)
+import Prelude hiding ((^))
+
+{-@ infix   ^ @-}
+{-@ reflect ^ @-}
+(^) :: (b -> c) -> (a -> b) -> a -> c
+(^) f g x = f (g x)
