@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List.List 
+import List 
 import Prelude hiding (length, map, (++))
 
 main :: IO ()

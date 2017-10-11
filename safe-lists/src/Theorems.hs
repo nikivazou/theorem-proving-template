@@ -3,14 +3,14 @@
 
 {-@ LIQUID "--automatic-instances=liquidinstanceslocal" @-}
 
-module Data.List.Theorems where 
+module Theorems where 
 
 import Prelude hiding (length, map, (++))
 
-import Data.List.List 
+import List 
 {-@ infix   ++ @-}
 
-import Data.Prelude 
+import Misc 
 
 import Language.Haskell.Liquid.ProofCombinators 
 
