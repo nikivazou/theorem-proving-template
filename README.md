@@ -1,18 +1,18 @@
-This is a template repo for structuring Liquid Haskell proofs. 
+This is a template repo for structuring and checking Liquid Haskell proofs. 
 
 # Listing of files in `src`:
 
-- `Main.hs` contains your main code that uses user-defined lists,
-- `Data/List.hs` contains the definition of the list data type,
-- `Data/Misc.hs` contains helper functions, and
-- `Theorems/List.hs` contains some theorems that lists satisfy.
+- [`Main.hs`](https://github.com/nikivazou/theorem-proving-template/blob/4bdf5386a9e7e9f4d37312991622b07259d51a56/safe-lists/src/Main.hs) contains your main code that uses user-defined lists,
+- [`Data/List.hs`](https://github.com/nikivazou/theorem-proving-template/blob/4bdf5386a9e7e9f4d37312991622b07259d51a56/safe-lists/src/Data/List.hs) contains the definition of the list data type,
+- [`Data/Misc.hs`](https://github.com/nikivazou/theorem-proving-template/blob/4bdf5386a9e7e9f4d37312991622b07259d51a56/safe-lists/src/Data/Misc.hs) contains helper functions, and
+- [`Theorems/List.hs`](https://github.com/nikivazou/theorem-proving-template/blob/4bdf5386a9e7e9f4d37312991622b07259d51a56/safe-lists/src/Theorems/List.hs) contains some theorems that lists satisfy.
 
 
 # Checking your code 
 
 ## With `Travis CI`
 
-Your code is automatically checked with Travis at each commit because of [.travis.yml](https://github.com/nikivazou/theorem-proving-template/blob/master/.travis.yml)
+Your theorems and code are automatically checked with Travis CI at each commit because of [.travis.yml](https://github.com/nikivazou/theorem-proving-template/blob/master/.travis.yml)
 
 ## With `stack`
 
