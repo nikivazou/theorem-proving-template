@@ -1,3 +1,4 @@
+-- NV TODO: These flags should be removed
 {-@ LIQUID "--higherorder"    @-}
 {-@ LIQUID "--exact-data-con" @-}
 

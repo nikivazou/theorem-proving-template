@@ -1,8 +1,6 @@
 {-@ LIQUID "--higherorder"    @-}
 {-@ LIQUID "--exact-data-con" @-}
 
-{-@ LIQUID "--automatic-instances=liquidinstances" @-}
-
 module Data.List where 
 
 import Prelude hiding (length, map, (++))
